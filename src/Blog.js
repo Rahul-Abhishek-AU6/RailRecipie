@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
-import axios from '../../axios';
+import axios from './axios';
 
-import Post from '../../components/Post/Post';
-import FullPost from '../../components/FullPost/FullPost';
-//import NewPost from '../../components/NewPost/NewPost';
-import './Blog.css';
+import Post from './components/Post/Post';
+import FullPost from './components/FullPost/FullPost';
+import './style/Blog.css';
 
 class Blog extends Component {
     state = {
@@ -25,10 +23,8 @@ class Blog extends Component {
                     }
                 });
                 this.setState({posts: updatedPosts});
-                // console.log( response );
             } )
             .catch(error => {
-                // console.log(error);
                 this.setState({error: true});
             });
     }
@@ -60,9 +56,6 @@ class Blog extends Component {
                 <hr></hr>
                 <section>
                     <FullPost id={this.state.selectedPostId} />
-                </section>
-                <section>
-                    {/* <NewPost /> */}
                 </section>
             </div>
         );
